@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7966af3-4a84-4af8-abc1-fa0a6f6c86fb" name="Changes" comment="feat dispatcherservlet, class handling request">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="b7966af3-4a84-4af8-abc1-fa0a6f6c86fb" name="Changes" comment="feat adapter, viewresolver, modelandview">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/HandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/HandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/RequestMappingHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/RequestMappingHandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/UserListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/UserListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlet/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/DispatcherServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/RequestMappingHandlerMapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/RequestMappingHandlerMapping.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/UserListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/UserListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -68,6 +60,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapps/js" />
+      <recent name="$PROJECT_DIR$/webapps/css" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="WebApplicationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.WebApplicationServer" />
@@ -97,7 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1689841554560</updated>
       <workItem from="1689841555891" duration="14553000" />
-      <workItem from="1690088843042" duration="6460000" />
+      <workItem from="1690088843042" duration="12887000" />
+      <workItem from="1690183492446" duration="14525000" />
     </task>
     <task id="LOCAL-00001" summary="feat tomcat">
       <option name="closed" value="true" />
@@ -115,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690009453323</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat adapter, viewresolver, modelandview">
+      <option name="closed" value="true" />
+      <created>1690095620603</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690095620603</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +131,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat tomcat" />
     <MESSAGE value="feat dispatcherservlet, class handling request" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat dispatcherservlet, class handling request" />
+    <MESSAGE value="feat adapter, viewresolver, modelandview" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat adapter, viewresolver, modelandview" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

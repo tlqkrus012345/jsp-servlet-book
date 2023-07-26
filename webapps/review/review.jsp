@@ -8,19 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="home.jsp">Book</a>
+        <a class="navbar-brand" href="/home.jsp">Book</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">메인</a>
+                    <a class="nav-link active" aria-current="page" href="/">메인</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +44,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">책 서평</a>
+                    <a class="nav-link" href="/review/review.jsp">책 서평</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -53,12 +52,12 @@
                         회원관리
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./user/form.jsp">회원가입</a></li>
+                        <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
                         <li><a class="dropdown-item" href="#">마이페이지</a></li>
                         <li><a class="dropdown-item" href="#">장바구니</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">로그인</a></li>
-                        <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
+                        <li><a class="dropdown-item" href="/user/logout.jsp">로그아웃</a></li>
                     </ul>
                 </li>
 
@@ -81,8 +80,8 @@
         </select>
         <input type="text" name="search" class="d-flex" placeholder="책 제목을 입력하세요">
         <button type="submit" class="btn btn-primary mx-1 mt-6">검색</button>
-        <a class="btn btn-primary mx-1 mt-6" data-bs-toggle="modal" href="#registerModal">등록</a>
-        <a class="btn btn-danger mx-1 mt-6" data-bs-toggle="modal" href="#reportModal">신고</a>
+        <button type="button" class="btn btn-primary mx-1 mt-6" data-bs-toggle="modal" data-bs-target="#registerModal">등록</button>
+        <button type="button" class="btn btn-danger mx-1 mt-6" data-bs-toggle="modal" data-bs-target="#reportModal">신고</button>
     </form>
 
     <div class="card bg-light mt-3">
@@ -118,13 +117,11 @@
 </section>
 
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal=header">
+            <div class="modal-header">
                 <h5 class="modal-title" id="modal">서평 등록</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="#" method="post">
@@ -141,14 +138,14 @@
                     </div>
                     <div clas="form-row">
                         <div class="form-group col-sm-4">
-                            <label for="startDate">시작 날짜</label>
+                            <label for="startDate">시작 날짜 (년/월/일)</label>
                             <input type="text" name="startDate" id="startDate" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="endDate">완료 날짜</label>
+                            <label for="endDate">완료 날짜 (년/월/일)</label>
                             <input type="text" name="endDate" id="endDate" class="form-control">
                         </div>
-                        <div class="form group col-sm-4">
+                        <div class="form-group col-sm-4">
                             <label>장르</label>
                             <select name="genre" class="form-control">
                                 <option value="문학" selected>문학</option>
@@ -163,7 +160,7 @@
                     </div>
                     <div class="form-group">
                         <label>내용</label>
-                        <textarea name="reviewContent" class="form-control" maxlength="2048" style="height: 180px"></textarea>
+                        <textarea name="reviewContent" class="form-control" maxlength="2048" style="height: 180px;"></textarea>
                     </div>
                     <div class="form-row">
                         <!--내뇽,전문성,논리 세가지를 기준으로 5점만점으로 평균을 내는 로직 -->
@@ -186,10 +183,36 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
                         <button type="button" class="btn btn-primary">등록</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal">신고</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label>신고 제목</label>
+                        <input type="text" name="reportTitle" class="form-control" maxlength="30">
+                    </div>
+                    <div class="form-group">
+                        <label>신고 내용</label>
+                        <textarea name="reportContent" class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-danger">신고하기</button>
             </div>
         </div>
     </div>
@@ -211,8 +234,6 @@
     document.getElementById("logicScore").addEventListener("input", calculateAverage);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

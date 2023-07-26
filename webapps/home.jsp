@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>home</title>
+    <title>메인 페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">메인</a>
+                    <a class="nav-link active" aria-current="page" href="/">메인</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./review/review.jsp">책 서평</a>
+                    <a class="nav-link" href="/review/review.jsp">책 서평</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -52,12 +52,12 @@
                         회원관리
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./user/form.jsp">회원가입</a></li>
+                        <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
                         <li><a class="dropdown-item" href="#">마이페이지</a></li>
                         <li><a class="dropdown-item" href="#">장바구니</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">로그인</a></li>
-                        <li><a class="dropdown-item" href="#">로그아웃</a></li>
+                        <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
+                        <li><a class="dropdown-item" href="/user/logout.jsp">로그아웃</a></li>
                     </ul>
                 </li>
 
@@ -69,8 +69,14 @@
         </div>
     </div>
 </nav>
+
+<section class="container mt-3" style="max-width: 560px;">
+   <div>
+
+   </div>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

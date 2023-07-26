@@ -13,8 +13,9 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>userId</th>
-        <th>name</th>
+        <th>userEmail</th>
+        <th>userPassword</th>
+        <th>userNickName</th>
         <th></th>
     </tr>
     </thead>
@@ -22,8 +23,9 @@
     <c:forEach items="${users}" var="user" varStatus="status">
         <tr>
             <th scope="row">${status.count}</th>
-            <td>${user.userId}</td>
-            <td>${user.name}</td>
+            <td>${user.userEmail}</td>
+            <td>${user.userPassword}</td>
+            <td>${user.userNickName}</td>
         </tr>
     </c:forEach>
     </tbody>

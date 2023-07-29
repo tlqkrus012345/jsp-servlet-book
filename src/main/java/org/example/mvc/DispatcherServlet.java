@@ -2,7 +2,6 @@ package org.example.mvc;
 
 import org.example.mvc.adapter.HandlerAdapter;
 import org.example.mvc.adapter.SimpleControllerHandlerAdapter;
-import org.example.mvc.controller.Controller;
 import org.example.mvc.controller.RequestMethod;
 import org.example.mvc.view.JspViewResolver;
 import org.example.mvc.view.ModelAndView;
@@ -32,6 +31,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+        log.info("init");
         RequestMappingHandlerMapping rmhm = new RequestMappingHandlerMapping();
         rmhm.init();
 
@@ -65,7 +65,7 @@ public class DispatcherServlet extends HttpServlet {
             HandlerAdapter handlerAdapter = handlerAdapters.stream()
                     .filter(ha -> ha.supports(handler))
                     .findFirst()
-                    .orElseThrow(() -> new ServletException("No apater for handler [" + handler + "]"));
+                    .orElseThrow(() -> new ServletException("No adapter for handler [" + handler + "]"));
 
             //핸들러어댑터 내부에서 핸들러를 실행하면 모델앤뷰가 디스패처서블릿으로 리턴이 되고
             ModelAndView modelAndView = handlerAdapter.handle(request, response, handler);

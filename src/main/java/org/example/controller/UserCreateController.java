@@ -26,6 +26,7 @@ public class UserCreateController implements Controller {
         try {
             userMapper.insertUser(user);
             MyBatisUtils.getSqlSession().commit();
+            request.getSession().setAttribute("user", user);
         } catch (Exception e) {
             MyBatisUtils.getSqlSession().rollback();
             throw e;
@@ -34,6 +35,6 @@ public class UserCreateController implements Controller {
         }
 
         // 클라이언트에게 /users 로 get 요청으로 다시 요청을 보내라고 한다
-        return "redirect:/users";
+        return "redirect:/";
     }
 }

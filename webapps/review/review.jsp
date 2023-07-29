@@ -47,19 +47,34 @@
                     <a class="nav-link" href="/review/review.jsp">책 서평</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        회원관리
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
-                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
-                        <li><a class="dropdown-item" href="#">장바구니</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
-                        <li><a class="dropdown-item" href="/user/logout.jsp">로그아웃</a></li>
-                    </ul>
-                </li>
+                <c:if test="${empty user}">
+                    <!-- 로그인 하지 않은 상태 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
+                        </ul>
+                    </li>
+                </c:if>
+
+                <!-- 로그인 상태인 경우 -->
+                <c:if test="${not empty user}">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user/mypage.jsp">마이페이지</a></li>
+                            <li><a class="dropdown-item" href="#">장바구니</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="user/logout.jsp">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </c:if>
 
             </ul>
             <form class="d-flex" role="search">
@@ -184,7 +199,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                        <button type="button" class="btn btn-primary">등록</button>
+                        <button type="button" class="btn btn-primary" onclick="openModalOrRedirect()">등록</button>
                     </div>
                 </form>
             </div>
@@ -232,6 +247,20 @@
     document.getElementById("contentScore").addEventListener("input", calculateAverage);
     document.getElementById("expertiseScore").addEventListener("input", calculateAverage);
     document.getElementById("logicScore").addEventListener("input", calculateAverage);
+</script>
+<script>
+    // 로그인 여부를 확인하여 모달 창을 열거나 로그인 페이지로 이동
+    function openModalOrRedirect() {
+        if (${not empty user}) {
+            const registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+            registerModal.show();
+        } else {
+            const confirmed = confirm("로그인이 필요한 서비스입니다. 로그인 페이지로 이동하시겠습니까?");
+            if (confirmed) {
+                window.location.href = "/user/login.jsp";
+            }
+        }
+    }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

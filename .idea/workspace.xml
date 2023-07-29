@@ -4,68 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7966af3-4a84-4af8-abc1-fa0a6f6c86fb" name="Changes" comment="feat review.jsp">
+    <list default="true" id="b7966af3-4a84-4af8-abc1-fa0a6f6c86fb" name="Changes" comment="feat mybatis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WebApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WebApplicationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/HandlerAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/HandlerKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/HandlerMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/RequestMappingHandlerMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/SimpleControllerHandlerAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/ForwardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/RequestMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/UserCreateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/controller/UserListController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/filter/CharacterEncodingFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/JspView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/JspViewResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/ModelAndView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/RedirectView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/View.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlet/view/ViewResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mapper/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/ReviewMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/DispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mvc/RequestMappingHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/RequestMappingHandlerMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mvc/adapter/SimpleControllerHandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mvc/adapter/SimpleControllerHandlerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/MyBatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/MyBatisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/home_jsp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/review/review_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/review/review_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/review/review_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/review/review_jsp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/form_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/form_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/form_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/form_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/list_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/list_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/list_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/list_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/WebApplicationServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/WebApplicationServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/DispatcherServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/HandlerAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/HandlerKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/HandlerMapping.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/RequestMappingHandlerMapping.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/SimpleControllerHandlerAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/ForwardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/RequestMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/UserCreateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/controller/UserListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/filter/CharacterEncodingFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/JspView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/JspViewResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/ModelAndView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/RedirectView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/View.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/servlet/view/ViewResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/login_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/login_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/login_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/logout_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/logout_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/logout_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/user/logout_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/controller/UserCreateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/controller/UserCreateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/DispatcherServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/RequestMappingHandlerMapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/RequestMappingHandlerMapping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/adapter/SimpleControllerHandlerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/mvc/adapter/SimpleControllerHandlerAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/utils/MyBatisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/WEB-INF/classes/org/example/utils/MyBatisUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps/review/review.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/review/review.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps/user/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/user/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/user/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/user/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapps/user/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/user/logout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/user/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/user/mypage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +134,8 @@
       <workItem from="1690088843042" duration="12887000" />
       <workItem from="1690183492446" duration="14692000" />
       <workItem from="1690263339266" duration="30347000" />
-      <workItem from="1690373000919" duration="7308000" />
+      <workItem from="1690373000919" duration="8256000" />
+      <workItem from="1690609609992" duration="11778000" />
     </task>
     <task id="LOCAL-00001" summary="feat tomcat">
       <option name="closed" value="true" />
@@ -194,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690205880165</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat mybatis">
+      <option name="closed" value="true" />
+      <created>1690380668757</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690380668757</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +199,7 @@
     <MESSAGE value="feat dispatcherservlet, class handling request" />
     <MESSAGE value="feat adapter, viewresolver, modelandview" />
     <MESSAGE value="feat review.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat review.jsp" />
+    <MESSAGE value="feat mybatis" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat mybatis" />
   </component>
 </project>

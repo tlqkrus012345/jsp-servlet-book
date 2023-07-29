@@ -1,6 +1,5 @@
 package org.example.mvc.adapter;
 
-import org.example.mvc.adapter.HandlerAdapter;
 import org.example.mvc.controller.Controller;
 import org.example.mvc.view.ModelAndView;
 

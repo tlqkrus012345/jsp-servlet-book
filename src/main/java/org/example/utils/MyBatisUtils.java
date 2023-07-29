@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 
 public class MyBatisUtils {
     private static SqlSessionFactory sqlSessionFactory;
@@ -20,8 +21,7 @@ public class MyBatisUtils {
             throw new RuntimeException("Error initializing MyBatisUtils.", e);
         }
     }
-
     public static SqlSession getSqlSession() {
-        return sqlSessionFactory.openSession();
+        return sqlSessionFactory.openSession(true);
     }
 }

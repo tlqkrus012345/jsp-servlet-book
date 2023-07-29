@@ -73,10 +73,10 @@
 </nav>
 
 <section class="container mt-3" style="max-width: 560px;">
-    <form method="post" action="#">
+    <form method="post" action="/user/login">
         <div class="form-group">
-            <label for="userId">아이디</label>
-            <input class="form-control" id="userId" name="userId" placeholder="아이디">
+            <label for="userEmail">이메일</label>
+            <input class="form-control" id="userEmail" name="userEmail" placeholder="이메일">
         </div>
         <div class="form-group">
             <label for="userPassword">비밀번호</label>
@@ -85,6 +85,11 @@
         <button type="submit" class="btn btn-primary mt-3">로그인</button>
     </form>
 </section>
+
+<c:if test="${not empty loginError}">
+    <p class="alert alert-danger">${loginError}</p>
+</c:if>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

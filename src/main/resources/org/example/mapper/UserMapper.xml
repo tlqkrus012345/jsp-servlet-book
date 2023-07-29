@@ -9,4 +9,8 @@
     <select id="selectAllUser" resultType="org.example.model.User">
         SELECT * FROM user
     </select>
+
+    <select id="findUserByUserEmail" parameterType="string" resultType="org.example.model.User">
+        SELECT * FROM user WHERE userEmail = #{userEmail}
+    </select>
 </mapper>

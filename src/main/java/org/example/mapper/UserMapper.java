@@ -7,4 +7,5 @@ import java.util.List;
 public interface UserMapper {
     void insertUser(User user);
     List<User> selectAllUser();
+    User findUserByUserEmail(String userEmail);
 }

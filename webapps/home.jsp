@@ -47,19 +47,34 @@
                     <a class="nav-link" href="/review/review.jsp">책 서평</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        회원관리
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
-                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
-                        <li><a class="dropdown-item" href="#">장바구니</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
-                        <li><a class="dropdown-item" href="/user/logout.jsp">로그아웃</a></li>
-                    </ul>
-                </li>
+                <c:if test="${empty user}">
+                    <!-- 로그인 하지 않은 상태 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
+                        </ul>
+                    </li>
+                </c:if>
+
+                <!-- 로그인 상태인 경우 -->
+                <c:if test="${not empty user}">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user/mypage.jsp">마이페이지</a></li>
+                            <li><a class="dropdown-item" href="#">장바구니</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="user/logout.jsp">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </c:if>
 
             </ul>
             <form class="d-flex" role="search">
@@ -71,9 +86,9 @@
 </nav>
 
 <section class="container mt-3" style="max-width: 560px;">
-   <div>
-
-   </div>
+    <c:if test="${not empty userNickName}">
+        <p>반갑습니다 ${userNickName}님</p>
+    </c:if>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

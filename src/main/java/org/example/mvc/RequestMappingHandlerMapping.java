@@ -1,8 +1,6 @@
 package org.example.mvc;
 
-import org.example.controller.HomeController;
-import org.example.controller.UserCreateController;
-import org.example.controller.UserListController;
+import org.example.controller.*;
 import org.example.mvc.controller.Controller;
 import org.example.mvc.controller.ForwardController;
 import org.example.mvc.controller.RequestMethod;
@@ -19,6 +17,9 @@ public class RequestMappingHandlerMapping implements HandlerMapping{
         mappings.put(new HandlerKey(RequestMethod.GET, "/users"), new UserListController());
         mappings.put(new HandlerKey(RequestMethod.POST, "/users"), new UserCreateController());
         mappings.put(new HandlerKey(RequestMethod.GET, "/user/form"), new ForwardController("/user/form"));
+        mappings.put(new HandlerKey(RequestMethod.POST, "/user/login"), new UserLoginController());
+        mappings.put(new HandlerKey(RequestMethod.GET, "/user/logout"), new ForwardController("/user/logout"));
+        mappings.put(new HandlerKey(RequestMethod.GET, "/user/logout"), new UserLogoutController());
     }
 
     public Controller findHandler(HandlerKey handlerKey) {

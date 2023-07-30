@@ -46,7 +46,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/review/review.jsp">책 서평</a>
+                    <a class="nav-link" href="/review/review">책 서평</a>
                 </li>
 
                 <c:if test="${empty user}">

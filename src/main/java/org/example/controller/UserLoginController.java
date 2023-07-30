@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.mapper.UserMapper;
 import org.example.model.User;
+import org.example.model.UserDAO;
 import org.example.mvc.controller.Controller;
 import org.example.utils.MyBatisUtils;
 
@@ -14,8 +15,8 @@ public class UserLoginController implements Controller {
         String userEmail = request.getParameter("userEmail");
         String userPassword = request.getParameter("userPassword");
 
-        UserMapper userMapper = MyBatisUtils.getSqlSession().getMapper(UserMapper.class);
-        User user = userMapper.findUserByUserEmail(userEmail);
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.findUserByUserEmail(userEmail);
 
         if (user == null || !user.getUserPassword().equals(userPassword)) {
             request.setAttribute("loginError", "아이디 또는 비밀번호가 틀렸습니다.");

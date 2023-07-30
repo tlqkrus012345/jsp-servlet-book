@@ -44,7 +44,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/review/review.jsp">책 서평</a>
+                    <a class="nav-link" href="/review">책 서평</a>
                 </li>
 
                 <c:if test="${empty user}">
@@ -99,36 +99,40 @@
         <button type="button" class="btn btn-danger mx-1 mt-6" data-bs-toggle="modal" data-bs-target="#reportModal">신고</button>
     </form>
 
-    <div class="card bg-light mt-3">
-        <div class="card-header bg-light">
-            <div class="row">
-                <div class="col-8 text-left">그리고 아무도 없었다&nbsp;<small>애거사 크리스티</small></div>
-                <div class="col-4 text-right">평점&nbsp;<span style="color:red">9</span></div>
+    <section class="container">
+        <c:forEach items="${reviews}" var="review">
+            <div class="card bg-light mt-3">
+                <div class="card-header bg-light">
+                    <div class="row">
+                        <div class="col-8 text-left">${review.reviewTitle}&nbsp;<small>${review.bookAuthor}</small></div>
+                        <div class="col-4 text-right">평점&nbsp;<span style="color:red">${review.reviewScore}</span></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="card-body bg-light">
-        <h5 class="card-title mx-3">그리고 아무도 없었다 읽고 감동&nbsp;<small>이규호</small></h5>
-        <p class="card-text mx-3 mt-3">역시 애거사 크리스티</p>
+            <div class="card-body bg-light">
+                <h5 class="card-title mx-3">${review.bookTitle}&nbsp;<small>${review.bookType}</small></h5>
+                <!--p class="card-text mx-3 mt-3"></p-->
+            </div>
+        </c:forEach>
+    </section>
 
-        <div class="container px-4 text-center">
-            <div class="row gx-2">
-                <div class="col-8">
-                    <div class="p-3">
-                        내용 <span>9</span>
-                        전문성 <span>9</span>
-                        논리 <span>9</span>
-                            <span style="color: darkgreen">(도움: 10)</span>
-                    </div>
-                </div>
-                <div class="col-4 text-right">
-                    <div class="p-3">
-                        <a onclick="return confirm('도움이 되셨습니가?')" href="#">도움</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container mt-3">
+        <nav aria-label="Review 페이지네이션">
+            <ul class="pagination justify-content-center">
+                <c:forEach var="i" begin="1" end="${totalPages}">
+                    <c:choose>
+                        <c:when test="${currentPage eq i}">
+                            <li class="page-item active"><a class="page-link" href="review?page=${i}">${i}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="review?page=${i}">${i}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </ul>
+        </nav>
     </div>
+
 </section>
 
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
@@ -139,16 +143,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="post">
+                <form action="/review" method="post">
                     <div class="form-row">
                         <div class="form-group col-sm-6">
-                            <label>책 제목</label>
-                            <input type="text" name="bookName" class="form-control" maxlength="20">
+                            <label for="bookTitle">책 제목</label>
+                            <input type="text" id="bookTitle" name="bookTitle" class="form-control" maxlength="20">
                         </div>
 
                         <div class="form-group col-sm-6">
-                            <label>저자</label>
-                            <input type="text" name="bookWriter" class="form-control" maxlength="20">
+                            <label for="bookAuthor">저자</label>
+                            <input type="text" id="bookAuthor" name="bookAuthor" class="form-control" maxlength="20">
                         </div>
                     </div>
                     <div clas="form-row">
@@ -161,8 +165,8 @@
                             <input type="text" name="endDate" id="endDate" class="form-control">
                         </div>
                         <div class="form-group col-sm-4">
-                            <label>장르</label>
-                            <select name="genre" class="form-control">
+                            <label for="bookType">장르</label>
+                            <select id="bookType" name="bookType" class="form-control">
                                 <option value="문학" selected>문학</option>
                                 <option value="경제">경제</option>
                                 <option value="교육">교육</option>
@@ -170,12 +174,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>제목</label>
-                        <input type="text" name="reviewName" class="form-control" maxlength="30">
+                        <label for="reviewTitle">제목</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" class="form-control" maxlength="30">
                     </div>
                     <div class="form-group">
-                        <label>내용</label>
-                        <textarea name="reviewContent" class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+                        <label for="reviewContent">내용</label>
+                        <textarea id="reviewContent" name="reviewContent" class="form-control" maxlength="2048" style="height: 180px;"></textarea>
                     </div>
                     <div class="form-row">
                         <!--내뇽,전문성,논리 세가지를 기준으로 5점만점으로 평균을 내는 로직 -->
@@ -193,13 +197,13 @@
                         </div>
                         <!-- 평균 계산 -->
                         <div class="form-group col-sm-4">
-                            <label for="averageScore">평균 점수</label>
-                            <input type="text" id="averageScore" class="form-control" readonly>
+                            <label for="reviewScore">평균 점수</label>
+                            <input type="text" id="reviewScore" name="reviewScore" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                        <button type="button" class="btn btn-primary" onclick="openModalOrRedirect()">등록</button>
+                        <button type="submit" class="btn btn-primary">등록</button>
                     </div>
                 </form>
             </div>
@@ -239,8 +243,8 @@
         const expertiseScore = parseFloat(document.getElementById("expertiseScore").value);
         const logicScore = parseFloat(document.getElementById("logicScore").value);
 
-        const averageScore = (contentScore + expertiseScore + logicScore) / 3;
-        document.getElementById("averageScore").value = averageScore.toFixed(1);
+        const reviewScore = (contentScore + expertiseScore + logicScore) / 3;
+        document.getElementById("reviewScore").value = reviewScore.toFixed(1);
     }
 
     // 입력 필드의 값이 변경될 때마다 평균 계산 실행

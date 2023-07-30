@@ -4,8 +4,8 @@
 <mapper namespace="org.example.mapper.ReviewMapper">
 
     <insert id="insertReview" parameterType="org.example.model.Review">
-        INSERT INTO review (reviewTitle, reviewContent, bookType, bookTitle, bookAuthor, startDate, endDate, reviewScore)
-        VALUES (#{reviewTitle}, #{reviewContent}, #{bookType}, #{bookTitle}, #{bookAuthor}, #{startDate}, #{endDate}, #{reviewScore})
+        INSERT INTO review (reviewTitle, reviewContent, bookType, bookTitle, bookAuthor, startDate, endDate, reviewScore, writerNickName)
+        VALUES (#{reviewTitle}, #{reviewContent}, #{bookType}, #{bookTitle}, #{bookAuthor}, #{startDate}, #{endDate}, #{reviewScore}, #{writerNickName})
     </insert>
 
     <select id="getReviewsByPage" resultType="org.example.model.Review">
@@ -14,6 +14,49 @@
 
     <select id="getTotalReviewCount" resultType="int">
         SELECT COUNT(*) FROM review
+    </select>
+
+    <select id="getReviewById" resultType="org.example.model.Review">
+        SELECT * FROM review WHERE reviewId = #{reviewId}
+    </select>
+
+    <select id="getReviewsByBookTypeAndTitle" resultType="org.example.model.Review">
+        SELECT *
+        FROM review
+        WHERE bookType = #{bookType} AND (reviewTitle LIKE CONCAT('%', #{search}, '%') OR bookTitle LIKE CONCAT('%', #{search}, '%'))
+        ORDER BY reviewId DESC
+            LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getTotalReviewsByBookTypeAndTitle" resultType="int">
+        SELECT COUNT(*) FROM review
+        WHERE bookType = #{bookType} AND (reviewTitle LIKE CONCAT('%', #{search}, '%') OR bookTitle LIKE CONCAT('%', #{search}, '%'))
+    </select>
+
+    <select id="getReviewsByBookType" resultType="org.example.model.Review">
+        SELECT *
+        FROM review
+        WHERE bookType = #{bookType}
+        ORDER BY reviewId DESC
+            LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getTotalReviewsByBookType" resultType="int">
+        SELECT COUNT(*) FROM review
+        WHERE bookType = #{bookType}
+    </select>
+
+    <select id="getReviewsByTitle" resultType="org.example.model.Review">
+        SELECT *
+        FROM review
+        WHERE reviewTitle LIKE CONCAT('%', #{search}, '%') OR bookTitle LIKE CONCAT('%', #{search}, '%')
+        ORDER BY reviewId DESC
+            LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getTotalReviewsByTitle" resultType="int">
+        SELECT COUNT(*) FROM review
+        WHERE reviewTitle LIKE CONCAT('%', #{search}, '%') OR bookTitle LIKE CONCAT('%', #{search}, '%')
     </select>
 
 </mapper>

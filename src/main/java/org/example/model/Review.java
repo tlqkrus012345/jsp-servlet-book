@@ -12,13 +12,13 @@ public class Review {
     private Date startDate;
     private Date endDate;
     private Double reviewScore;
-    private User writer;
+    private String writerNickName;
 
-    public User getWriter() {
-        return writer;
+    public String getWriterNickName() {
+        return writerNickName;
     }
-    public void setWriter(User writer) {
-        this.writer = writer;
+    public void setWriterNickName(String writerNickName) {
+        this.writerNickName = writerNickName;
     }
 
     public int getReviewId() {

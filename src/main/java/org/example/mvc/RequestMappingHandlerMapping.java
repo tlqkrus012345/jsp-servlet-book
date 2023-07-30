@@ -22,6 +22,8 @@ public class RequestMappingHandlerMapping implements HandlerMapping{
         mappings.put(new HandlerKey(RequestMethod.GET, "/user/logout"), new UserLogoutController());
         mappings.put(new HandlerKey(RequestMethod.POST, "/review"), new ReviewCreateController());
         mappings.put(new HandlerKey(RequestMethod.GET, "/review"), new ReviewListController());
+        mappings.put(new HandlerKey(RequestMethod.GET, "/review/view"), new ReviewController());
+        mappings.put(new HandlerKey(RequestMethod.POST, "/search"), new SearchController());
     }
 
     public Controller findHandler(HandlerKey handlerKey) {

@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/home.jsp">Book</a>
@@ -46,22 +44,37 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/review/review">책 서평</a>
+                    <a class="nav-link" href="/review">책 서평</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        회원관리
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
-                        <li><a class="dropdown-item" href="#">마이페이지</a></li>
-                        <li><a class="dropdown-item" href="#">장바구니</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
-                        <li><a class="dropdown-item" href="/user/logout.jsp">로그아웃</a></li>
-                    </ul>
-                </li>
+                <c:if test="${empty user}">
+                    <!-- 로그인 하지 않은 상태 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/user/form.jsp">회원가입</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/user/login.jsp">로그인</a></li>
+                        </ul>
+                    </li>
+                </c:if>
+
+                <!-- 로그인 상태인 경우 -->
+                <c:if test="${not empty user}">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            회원관리
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user/mypage.jsp">마이페이지</a></li>
+                            <li><a class="dropdown-item" href="#">장바구니</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="user/logout.jsp">로그아웃</a></li>
+                        </ul>
+                    </li>
+                </c:if>
 
             </ul>
             <form class="d-flex" role="search">
@@ -72,23 +85,12 @@
     </div>
 </nav>
 
-<section class="container mt-3" style="max-width: 560px;">
-    <form method="post" action="/user/login">
-        <div class="form-group">
-            <label for="userEmail">이메일</label>
-            <input class="form-control" id="userEmail" name="userEmail" placeholder="이메일">
-        </div>
-        <div class="form-group">
-            <label for="userPassword">비밀번호</label>
-            <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="패스워드">
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">로그인</button>
-    </form>
+<section class="container mt-3">
+    <h2><strong>서평 제목:</strong> ${review.reviewTitle}</h2>
+    <p><strong>작성자:</strong> ${review.writerNickName}</p>
+    <p><strong>내용:</strong> ${review.reviewContent}</p>
 </section>
 
-<c:if test="${not empty loginError}">
-    <p class="alert alert-danger">${loginError}</p>
-</c:if>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

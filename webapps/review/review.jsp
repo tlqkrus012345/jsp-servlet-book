@@ -87,8 +87,8 @@
 <!-- 상단 끝-->
 
 <section class="container">
-    <form method="get" action="#" class="d-flex mt-3">
-        <select name="genre" class="d-flex mx-1">
+    <form method="post" action="/search" class="d-flex mt-3">
+        <select name="bookType" class="d-flex mx-1">
             <option value="문학">문학</option>
             <option value="경제">경제</option>
             <option value="교육">교육</option>
@@ -104,7 +104,12 @@
             <div class="card bg-light mt-3">
                 <div class="card-header bg-light">
                     <div class="row">
-                        <div class="col-8 text-left">${review.reviewTitle}&nbsp;<small>${review.bookAuthor}</small></div>
+                        <div class="col-8 text-left">
+                            <a href="review/view?reviewId=${review.reviewId}">
+                                ${review.reviewTitle}&nbsp;<small>${review.bookAuthor}</small>
+                            </a>
+                        </div>
+
                         <div class="col-4 text-right">평점&nbsp;<span style="color:red">${review.reviewScore}</span></div>
                     </div>
                 </div>

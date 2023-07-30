@@ -44,7 +44,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/review/review">책 서평</a>
+                    <a class="nav-link" href="/review">책 서평</a>
                 </li>
 
                 <c:if test="${empty user}">
@@ -85,11 +85,19 @@
     </div>
 </nav>
 
-<section class="container mt-3" style="max-width: 560px;">
+<section class="container mt-3" style="max-width: 100%;">
     <c:if test="${not empty userNickName}">
-        <p>반갑습니다 ${userNickName}님</p>
+        <p style="text-align: center;"><strong>반갑습니다 ${userNickName}님</strong></p>
     </c:if>
+
+    <div style="background-color: #f7f7f7; padding: 20px; border-radius: 8px;">
+        <p style="text-align: center; font-size: 24px; margin-bottom: 20px;"><strong>책을 읽고 자신의 생각을 나누는 공간 '북'</strong></p>
+        <div style="text-align: center;">
+            <img style="max-width: 100%;" alt="스크린샷 이미지" src="https://github.com/tlqkrus012345/sym/assets/82653075/a775ce43-d7bf-4fc7-8b9e-b766da8a5595">
+        </div>
+    </div>
 </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

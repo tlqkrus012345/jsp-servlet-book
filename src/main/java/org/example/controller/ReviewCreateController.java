@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.BookType;
 import org.example.model.Review;
 import org.example.model.ReviewDAO;
+import org.example.model.User;
 import org.example.mvc.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,9 @@ import java.util.List;
 public class ReviewCreateController implements Controller {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("user");
+        String userNickName = user.getUserNickName();
+
         String reviewTitle = request.getParameter("reviewTitle");
         String reviewContent = request.getParameter("reviewContent");
         String bookTypeValue = request.getParameter("bookType");
@@ -37,6 +41,7 @@ public class ReviewCreateController implements Controller {
         review.setStartDate(startD);
         review.setEndDate(endD);
         review.setReviewScore(reviewScore);
+        review.setWriterNickName(userNickName);
 
         ReviewDAO reviewDAO = new ReviewDAO();
         reviewDAO.insertReview(review);
